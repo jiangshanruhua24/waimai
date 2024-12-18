@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+#  redis:
+#    port: 6379
+#    host: localhost
+  application:
+    name: waimai
+  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+#      # 连接池-初始化大小
+#      initial-size: 10
+#      # 连接池-最大连接数
+#      max-active: 100
+#      # 最大等待时间
+#      max-wait: 60000
+#      # 连接池-最小空闲数
+#      min-idle: 10
+#      # 检测空闲连接
+#      test-while-idle: true
+#      # 最小空闲时间
+#      min-evictable-idle-time-millis: 300000
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    #表明address_book =>实体AddressBook
+    #字段 user_name=》 属性userName
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ID_WORKER
+#reggie:
+#  path: "E:/img/"
+
